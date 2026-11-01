@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>다산2동 홍보물 작업 안내</title>
+  <title>다산2동 홍보물 시안 검수 안내</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     body { font-family: 'Pretendard', sans-serif; }
     .glass-card {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
       border: 1px solid rgba(233, 213, 255, 0.6);
     }
   </style>
@@ -27,7 +27,7 @@
       </div>
       <div class="flex items-center space-x-3">
         <span class="text-xs px-3 py-1 rounded-full font-medium bg-purple-50 text-purple-700 border border-purple-200">
-           작업중 화일
+          최종 시안 검수용
         </span>
       </div>
     </div>
@@ -57,7 +57,7 @@
       
       <!-- Video Player Section (2 Cols) -->
       <div class="lg:col-span-2 space-y-4">
-        <div class="glass-card rounded-3xl p-6 shadow-xl shadow-slate-200/50">
+        <div class="glass-card rounded-3xl p-6 shadow-xl shadow-purple-900/5">
           <div class="flex items-center justify-between mb-4">
             <h3 class="font-bold text-slate-900 flex items-center space-x-2">
               <i class="fa-solid fa-circle-play text-purple-600"></i>
@@ -80,7 +80,7 @@
       <div class="space-y-6">
         
         <!-- Google Drive Card -->
-        <div class="glass-card rounded-3xl p-6 shadow-xl shadow-slate-200/50 flex flex-col justify-between">
+        <div class="glass-card rounded-3xl p-6 shadow-xl shadow-purple-900/5 flex flex-col justify-between">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600">
               <i class="fa-solid fa-folder-open text-xl"></i>
@@ -99,13 +99,13 @@
         </div>
 
         <!-- Contact Box -->
-        <div class="glass-card rounded-3xl p-6 shadow-xl shadow-slate-200/50 space-y-4 border-l-4 border-l-purple-600">
+        <div class="glass-card rounded-3xl p-6 shadow-xl shadow-purple-900/5 space-y-4 border-l-4 border-l-purple-600">
           <h4 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
             <i class="fa-solid fa-envelope-open-text text-purple-600"></i>
             <span>수정 사항 문의</span>
           </h4>
           <p class="text-xs text-slate-600 leading-relaxed">
-            시안 확인 후 수정이 필요한 부분이나 문의 사항은 아래 이메일이나 연락주시면 감사하겠습니다.
+            시안 검수 후 수정이 필요한 부분이나 문의 사항은 아래 이메일로 전달해 주시기 바랍니다.
           </p>
           <div class="flex items-center justify-between p-3 rounded-xl bg-purple-50/60 border border-purple-100 text-xs">
             <span id="display-email" class="font-mono text-purple-900 font-semibold select-all">lilyjisuk7@naver.com</span>
@@ -121,23 +121,37 @@
 
   <!-- Drive Modal -->
   <div id="drive-modal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-5">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-5 border border-purple-100">
       <div class="flex items-center justify-between">
         <h3 class="font-bold text-slate-900 text-lg flex items-center space-x-2">
           <i class="fa-brands fa-google-drive text-purple-600"></i>
-          <span>구글 드라이브 폴더 안내</span>
+          <span>구글 드라이브 폴더 선택</span>
         </h3>
         <button onclick="closeDriveModal()" class="text-slate-400 hover:text-slate-600 text-sm p-1">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
       <p class="text-xs text-slate-600 leading-relaxed">
-        아래 버튼을 누르시면 PPT 및 PDF 파일이 포함된 다산2동 구글 드라이브 공유 폴더로 바로 이동합니다.
+        열람 또는 다운로드하실 원본 자료 종류를 선택해 주세요.
       </p>
-      <div class="pt-2">
-        <a id="btn-drive-folder" href="#" target="_blank" class="w-full py-3 px-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm transition-all flex items-center justify-center space-x-2 shadow-md shadow-purple-600/20">
-          <span>드라이브 폴더 접속하기</span>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+      
+      <div class="space-y-3 pt-1">
+        <!-- PPT Link Button -->
+        <a id="btn-ppt-folder" href="#" target="_blank" class="w-full py-3.5 px-4 rounded-2xl bg-purple-50 hover:bg-purple-100 border border-purple-200 text-purple-900 font-semibold text-sm transition-all flex items-center justify-between group">
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-file-powerpoint text-purple-600 text-lg"></i>
+            <span>PPT 원본 폴더 열기</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-purple-400 group-hover:text-purple-600"></i>
+        </a>
+
+        <!-- PDF Link Button -->
+        <a id="btn-pdf-folder" href="#" target="_blank" class="w-full py-3.5 px-4 rounded-2xl bg-slate-50 hover:bg-purple-50 border border-slate-200 hover:border-purple-200 text-slate-800 hover:text-purple-900 font-semibold text-sm transition-all flex items-center justify-between group">
+          <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-file-pdf text-purple-600 text-lg"></i>
+            <span>PDF 문서 폴더 열기</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-purple-600"></i>
         </a>
       </div>
     </div>
@@ -152,13 +166,14 @@
   </div>
 
   <script>
-    // 최종 고정 데이터 (대표님 전용 정보)
+    // 최종 고정 데이터
     const config = {
       title: "다산2동 홍보물 시안 검수",
       desc: "제작 완료된 다산2동 홍보 영상 시안 및 PPT/PDF 문서 자료입니다. 아래 영상과 구글 드라이브 폴더를 통해 전달 결과물을 확인해 주세요.",
       email: "lilyjisuk7@naver.com",
       youtube: "https://youtu.be/qn64fMbNUd0?si=g-LhIxVq-Z4JZpYP",
-      drive: "https://drive.google.com" // 📌 나중에 구글 드라이브 폴더 주소가 생기면 이 부분 링크만 바꿔주시면 됩니다!
+      drivePpt: "https://drive.google.com/drive/folders/1VyAjFfeT1RcFfve1ETF8pKD68te5HbMa?usp=sharing",
+      drivePdf: "https://drive.google.com/drive/folders/1gJUonDwIZLLQNJG9YDTVHqHbZ04b6Zk8?usp=drive_link"
     };
 
     function extractYoutubeId(url) {
@@ -176,7 +191,8 @@
       const ytId = extractYoutubeId(config.youtube);
       document.getElementById('youtube-player').src = `https://www.youtube.com/embed/${ytId}`;
       document.getElementById('btn-youtube-link').href = config.youtube;
-      document.getElementById('btn-drive-folder').href = config.drive;
+      document.getElementById('btn-ppt-folder').href = config.drivePpt;
+      document.getElementById('btn-pdf-folder').href = config.drivePdf;
     }
 
     function copyEmail() {
