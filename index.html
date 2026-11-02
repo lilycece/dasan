@@ -18,7 +18,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-indigo-600 selection:text-white">
 
-  <!-- Header (오픈 타이포그래피 스타일 - 인디고 포인트) -->
+  <!-- Header -->
   <header class="w-full bg-slate-50/90 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-2">
@@ -56,7 +56,7 @@
     <!-- Main Grid: Video & Drive -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-2">
       
-      <!-- Video Player Section (2 Cols) -->
+      <!-- Video Player Section (Direct Click Card) -->
       <div class="lg:col-span-2 space-y-3">
         <div class="glass-card rounded-2xl p-4 shadow-sm">
           <div class="flex items-center justify-between mb-2.5">
@@ -64,16 +64,22 @@
               <i class="fa-solid fa-circle-play text-indigo-600"></i>
               <span>홍보 영상 시안 (유튜브 일부공개)</span>
             </h3>
-            <a href="https://youtu.be/OBq172TrJ80" target="_blank" rel="noopener noreferrer" class="text-[11px] font-semibold text-indigo-600 hover:text-indigo-800 flex items-center space-x-1 transition-colors">
-              <span>유튜브에서 보기</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-            </a>
+            <span class="text-[11px] font-medium text-slate-400">클릭 시 유튜브로 이동</span>
           </div>
           
-          <!-- Video Aspect Container -->
-          <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-inner">
-            <iframe class="w-full h-full border-0" src="https://www.youtube.com/embed/OBq172TrJ80" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+          <!-- Video Thumbnail Card (Direct Link) -->
+          <a href="https://youtu.be/h_1ZQTQRlu8" target="_blank" rel="noopener noreferrer" class="relative block w-full aspect-video rounded-xl overflow-hidden bg-slate-900 shadow-inner group transition-all">
+            <img src="https://img.youtube.com/vi/h_1ZQTQRlu8/hqdefault.jpg" alt="다산2동 홍보 영상 썸네일" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-indigo-600/90 text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-play text-xl sm:text-2xl ml-1"></i>
+              </div>
+            </div>
+            <div class="absolute bottom-3 right-3 bg-slate-900/80 text-white text-[11px] px-2.5 py-1 rounded-md backdrop-blur-sm flex items-center space-x-1">
+              <span>유튜브에서 영상 보기</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+            </div>
+          </a>
         </div>
       </div>
 
